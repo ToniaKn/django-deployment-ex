@@ -1,0 +1,37 @@
+{% extends "tonia_app/base.html" %}
+{% load staticfiles %}
+
+{% block body_block %}
+
+
+<div class="jumbotron">
+<div class="container">
+
+  {% if registered  %}
+
+    <h1>Thank you for registering! </h1>
+
+  {% else %}
+
+    <h2>Register here!</h2>
+
+    <h4> Fill out the form </h4>
+
+    <form enctype="multipart/form-data" method="POST"  >
+
+        {% csrf_token %}
+
+        {{user_form.as_p}}
+
+        {{profile_form.as_p}}
+
+        <input type="submit" name="" value="Register">
+
+    </form>
+
+  {% endif %}
+
+</div>
+</div>
+
+{% endblock %}

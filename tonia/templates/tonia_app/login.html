@@ -1,0 +1,26 @@
+{% extends "tonia_app/base.html" %}
+{% load staticfiles %}
+
+{% block body_block %}
+
+
+<div class="jumbotron">
+
+  <h1>Please log in!</h1>
+
+  <form class="" action="{% url "tonia_app:user_login" %}" method="POST">
+
+    {% csrf_token %}
+
+    <label for="username">USername:</label>
+    <input type="text" name="username" placeholder="Enter User Name">
+    <label for="password">Password:</label>
+    <input type="text" name="password" >
+    <input type="submit" value="Login" >
+
+  </form>
+
+</div>
+
+
+{% endblock %}
